@@ -2,12 +2,20 @@ body, html {
 	width:100%;
 	height: 100%;
 	margin:0;
-
+	
+	font-family: 'courier';
+	background-color: #000000;
 	color: white;
 }
 
 #navbar {
+	width: 100%;
+
 	background-color: transparent;
+	font-size: 16px;
+
+	position: fixed;
+	top:0;
 }
 
 #navbar ul {
@@ -20,30 +28,64 @@ body, html {
 	padding:10px;
 }
 
-#main-container {
+.main-container {
 	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	transition: all 0.2s linear;
 }
 
-.bg-home{
+/*.bg-home {
 	background-color: black;
 }
 
 .bg-about {
-	background-color: blue;
+	background-color: black;
 }
 
 .bg-map {
-	background-color: yellow;
-}
+	background-color: black;
+}*/
 
 #home-container {
-	width: 100%;
+	height: 100vh;
 	text-align: center;
 	font-size: 50px;
 }
 
 #home-container h1 {
 	display: inline-block;
+}
+
+#about-container {
+	width:80%;
+	margin:auto;
+
+	font-size: 40px;
+}
+
+/*in case of video background*/
+.video {
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  width: 100%; 
+  height: 100%;
+  overflow-x: hidden;
+  z-index: -100;
+}
+
+
+/*Animation*/
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
 }
