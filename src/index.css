@@ -1,86 +1,399 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+
 body, html {
 	width:100%;
 	height: 100%;
 	margin:0;
 	
-	font-family: 'courier';
-	background-color: #000000;
-	color: white;
+	font-family: 'Inconsolata';
+	font-size:20px;
+	background-color: #242424;
+	color: #cacaca;
 }
 
-#navbar {
-	width: 100%;
-
-	background-color: transparent;
-	font-size: 16px;
-
-	position: fixed;
-	top:0;
+.pink {
+	color: #FF0067;
 }
+.green {
+	color: #89FC14;
+}
+.blue {
+	color: #5FD6F3;
+}
+.orange {
+	color: #FE9F00;
+}
+.purple {
+	color: #AD00FF;
+}
+
+/* NAVIGATION BAR */
 
 #navbar ul {
 	list-style-type: none;
 	margin:0;
 
-	float: right;
-}
+	width: 100%;
 
-#navbar ul li {
-	display: inline-block;
-	padding:10px;
+	background-color: #0d0d0d;
+	font-size: 18px;
+	text-transform: uppercase;
+
+	position: fixed;
+	top:0;
 }
 
 #navbar a {
 	text-decoration: none;
-	color: white;
+	color: #cacaca;
 }
 
-#navbar .active {
+#navbar .regular-nav {
+	display:none;
+	float:right;
+}
+
+#navbar .regular-nav li {
+	display: inline-block;
+	padding:10px;
+}
+
+#navbar .regular-nav .active,
+#navbar .dropdown-nav .active{
 	text-decoration: underline;
 	font-weight: bold;
 }
+
+#navbar .dropdown-nav {
+	padding:0;
+	text-align: right;
+	height: 50px;
+}
+
+.menu-bar {
+	width: 20px;
+	height: 2px;
+	background-color: #cacaca;
+	margin: 3px;
+	border-radius: 1px;
+}
+
+#navbar .btn-drop {
+	display:inline-block;
+	text-align: right;
+	margin: 15px 10px;
+}
+
+#navbar .dropdown-content {
+	right:-130px;
+	height:100vh;
+    width: 130px;
+    margin-top: -3px;
+
+	position:absolute;
+    background-color: #0d0d0d;
+    transition: 0.5s all ease;
+}
+
+#navbar .dropdown-content li {
+	padding:5px 10px;
+}
+
+#navbar .dropdown-nav:hover .dropdown-content {
+	display:block;
+	right:0;
+}
+
+/* MAIN PAGES */
 
 .main-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
-	height: 100vh;
-	width: 80%;
-	margin:auto;
-
-	transition: all 0.2s linear;
+	height:100vh;
 }
 
+/* HOME PAGE */
+
 #home-container {
-	height: 100vh;
-	text-align: center;
-	font-size: 50px;
+	margin: 0 10px;
+}
+
+#home-container span {
+	display:block;
+	font-weight: 800;
 }
 
 #home-container h1 {
-	display: inline-block;
+	font-size: 50px;
+	display: block
 }
+
+/* ABOUT PAGE */
 
 #about-container {
-	width:80%;
+	margin:0 10px;
+}
+
+#about-container p {
+	font-weight: 800;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+/* MAP PAGE */
+
+.map-title {
+	display:block;
+	top: 10%;
+    left: 10%;
+	position:absolute;
+}
+
+.map {
+	width:100%;
+	height: 100vh;
+	border:none;
+}
+
+
+/* TESTIMONIALS PAGE */
+
+#testimonials-container {
+	width: 90%;
 	margin:auto;
-
-	font-size: 40px;
+	margin-top: 70px;
+	margin-bottom: 70px;
 }
 
-#register-container{
-	display: block;
+#testimonials-container h1 {
+	color: #5FD6F3;
 }
 
-/*in case of video background*/
-.video {
-	position: fixed;
-	right: 0; 
-	bottom: 0;
-	width: 100%; 
-	height: 100%;
-	overflow-x: hidden;
-	z-index: -100;
+/* REGISTER PAGE */
+
+#register-container {
+	margin: 100px 10px 50px 10px;
+
+	color: #89FC14;
+}
+
+#register-container h3,
+#register-container h4{	
+	margin: 0;
+}
+
+#register-container h4 {
+	font-size: 14px;
+}
+
+#register-container label {
+	font-weight: 800;
+}
+
+.group-name-container h2 {
+	margin-bottom: 5px;
+}
+.group-name-container input {
+	width:100%;
+}
+
+.members-container textarea {
+	width: 100%;
+}
+
+.other-container textarea {
+	width:100%;
+}
+
+.member-title {
+	margin: 10px 0;
+}
+
+#register-container input, 
+#register-container textarea {
+	color: #cacaca;
+	background: transparent;
+	border:none;
+	border-bottom: 1px solid #89FC14;
+}
+
+#register-container input:focus,
+#register-container textarea:focus {
+	outline:none;
+	/*border-bottom: 1px solid #cacaca;*/
+	background-color: #89FC14;
+	color: #242424;
+}
+
+.field {
+	margin-bottom: 10px;
+}
+
+#btn-submit {
+	background-color: #89FC14;
+	padding: 10px 25px;
+	margin: 50px 0;
+
+	border:none;
+	border-radius: 5px;
+
+	font-family: 'Inconsolata';
+	font-size: 18px;
+	font-weight: 800;
+}
+
+#btn-submit:focus {
+	outline:none;
+}
+
+#btn-submit:active {
+	background-color: #cacaca;
+}
+
+/* CONTACT */
+#contact-container {
+	margin-top: 50px;
+	height: 100vh;
+}
+
+.contact-desc-container,
+.contact-form-container {
+	width: 90%;
+	margin:auto;
+}
+
+#contact-container input,
+#contact-container textarea{
+	width:100%;
+
+	background:none;
+	border:none;
+	border: 1px solid #cacaca;
+
+	/*padding:5px 10px;*/
+
+	color: #cacaca;
+}
+
+#contact-container input:hover,
+#contact-container textarea:hover,
+#contact-container input:focus,
+#contact-container textarea:focus {
+	background: #cacaca;
+	color:#242424;
+}
+
+#btn-send {
+	background-color: #cacaca;
+	padding: 10px 25px;
+
+	border:none;
+	border-radius: 5px;
+
+	font-family: 'Inconsolata';
+	font-size: 18px;
+	font-weight: 800;
+}
+
+#btn-send:focus,
+#btn-send:hover{
+	color: #cacaca;
+	background-color: transparent;
+	border: 1px solid #cacaca;
+}
+
+@media screen and (min-width: 426px){
+	#about-container {
+		width: 80%;
+	}
+
+	#about-container p {
+		margin-left: 20px;
+		font-size: 24px;
+	}
+	
+	#register-container {
+		width: 80%;
+		margin: auto;
+		margin-top: 50px;
+	}
+
+	#testimonials-container {
+		width: 80%;
+	}
+
+	#contact-container {
+		width: 80%;
+		margin:auto;
+		margin-top: 50px;
+	}
+}
+
+@media screen and (min-width: 769px){
+	#navbar .regular-nav {
+		display: block;
+
+	}
+
+	#navbar .dropdown-nav {
+		display: none;
+	}
+
+	#about-container {
+		width: 50%;
+	}
+
+	#register-container {
+		width: 50%;
+	}
+
+	#testimonials-container {
+		width: 50%;
+	}
+
+	.member {
+		display:inline-block;
+		width:45%;
+		margin-right: 2.5%;
+	}
+
+	.other-container textarea {
+		display:block;
+		width:50%;
+	}
+
+	#contact-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		height: 100vh;
+	}
+
+	.contact-desc-container {
+		width: 40%;
+		margin-right:0;
+	}
+
+	.contact-form-container {
+		width: 40%;
+		margin-left:0;
+	}
+}
+
+@media screen and (min-width: 1028px){
+
+	.contact-desc-container {
+		width: 30%;
+		margin-right:0;
+	}
+
+	.contact-form-container {
+		width: 30%;
+		margin-left:0;
+	}
+
 }

@@ -5,7 +5,7 @@ import './index.css'
 import Home from './pages/Home'
 import About from './pages/About'
 import Map from './pages/Map'
-import Gallery from './pages/Gallery'
+import Testimonials from './pages/Testimonials'
 import Register from './pages/Register'
 import Contact from './pages/Contact'
 
@@ -16,20 +16,35 @@ class App extends React.Component {
 			<Router>
 				<div>
 					<div id="navbar">
-						<ul>
+						<ul class="regular-nav">
 							<li><CustomLink activeOnlyWhenExact={true} to="/" label="Home"/></li>
 							<li><CustomLink to="/about" label="About"/></li>
 							<li><CustomLink to="/map" label="Map"/></li>
-							<li><CustomLink to="/gallery" label="Gallery"/></li>
+							<li><CustomLink to="/testimonials" label="Testimonials"/></li>
 							<li><CustomLink to="/register" label="Register"/></li>
 							<li><CustomLink to="/contact" label="Contact"/></li>
+						</ul>
+						<ul class="dropdown-nav">
+							<div class="btn-drop">
+								<div class="menu-bar"></div>
+								<div class="menu-bar"></div>
+								<div class="menu-bar"></div>
+							</div>
+							<div class="dropdown-content">
+								<li><CustomLink activeOnlyWhenExact={true} to="/" label="Home"/></li>
+								<li><CustomLink to="/about" label="About"/></li>
+								<li><CustomLink to="/map" label="Map"/></li>
+								<li><CustomLink to="/testimonials" label="Testimonials"/></li>
+								<li><CustomLink to="/register" label="Register"/></li>
+								<li><CustomLink to="/contact" label="Contact"/></li>
+							</div>
 						</ul>
 					</div>
 
 					<Route exact path="/" component={Home}/>
 					<Route path="/about" component={About}/>
 					<Route path="/map" component={Map}/>
-					<Route path="/gallery" component={Gallery} />
+					<Route path="/testimonials" component={Testimonials}/>
 					<Route path="/register" component={Register}/>
 					<Route path="/contact" component={Contact}/>
 				</div>
