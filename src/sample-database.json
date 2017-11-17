@@ -1,0 +1,43 @@
+{
+	"groups":{
+		"name": "Team Ed Sheeran",
+		"members": {
+			"one": {
+				"name": "",
+				"school": "",
+				"contact": "",
+				"email": "",
+				"diet": "",
+				"size": ""
+			},
+			"two": {
+				"name": "",
+				"school": "",
+				"contact": "",
+				"email": "",
+				"diet": "",
+				"size": ""
+			},
+			"three": {
+				"name": "",
+				"school": "",
+				"contact": "",
+				"email": "",
+				"diet": "",
+				"size": ""
+			},
+			"four": {
+				"name": "",
+				"school": "",
+				"contact": "",
+				"email": "",
+				"diet": "",
+				"size": ""
+			}
+		},
+		"other_where": "",
+		"other_why": "",
+		"other_what": "",
+		"other_concerns":""
+	}	
+}

@@ -171,6 +171,18 @@ body, html {
 	color: #5FD6F3;
 }
 
+#testimonials-container .photo {
+	width: 200px;
+	height: 200px;
+	background-color: #cacaca;
+	border-radius: 50%;
+	margin:auto;
+}
+
+#testimonials-container .content {
+	text-align: left;
+}
+
 /* REGISTER PAGE */
 
 #register-container {
@@ -211,7 +223,7 @@ body, html {
 	margin: 10px 0;
 }
 
-#register-container input, 
+#register-container input[type="text"], 
 #register-container textarea {
 	color: #cacaca;
 	background: transparent;
@@ -229,6 +241,35 @@ body, html {
 
 .field {
 	margin-bottom: 10px;
+}
+
+/*.btn-upload {
+    overflow: hidden;
+    position: relative;
+}*/
+
+.btn-upload input[type="file"] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.btn-upload {
+	display:inline-block;
+    background-color: #89FC14;
+    color: #242424;
+    font-size: 14px;
+    height: 16px;
+    padding: 2px 10px;
+
+    cursor: pointer;
+}
+
+.btn-upload label {
+	cursor: pointer;
 }
 
 #btn-submit {
@@ -322,6 +363,19 @@ body, html {
 
 	#testimonials-container {
 		width: 80%;
+	}
+
+	#testimonials-container .main {
+		display: flex;
+		flex-direction: row;
+	}
+
+	#testimonials-container .photo {
+		/*display: inline-block;*/
+	}
+
+	#testimonials-container .content {
+		width: auto;
 	}
 
 	#contact-container {

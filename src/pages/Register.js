@@ -1,50 +1,106 @@
 import React from 'react'
+import * as firebase from 'firebase';
+
 
 export default class Register extends React.Component {
 	constructor(props){
 		super(props);
 		this.handleSave = this.handleSave.bind(this);
 		this.handleChange = this.handleChange.bind(this);
+		this.handlePhotoUpload = this.handlePhotoUpload.bind(this);
 		this.state = { 
-			group_name: '',
-			member1_name: '',
-			member1_school: '',
-			member1_contact: '',
-			member1_email: '',
-			member1_diet: '',
-			member1_size: '',
-			member2_name: '',
-			member2_school: '',
-			member2_contact: '',
-			member2_email: '',
-			member2_diet: '',
-			member2_size: '',
-			member3_name: '',
-			member3_school: '',
-			member3_contact: '',
-			member3_email: '',
-			member3_diet: '',
-			member3_size: '',
-			member4_name: '',
-			member4_school: '',
-			member4_contact: '',
-			member4_email: '',
-			member4_diet: '',
-			member4_size: '',
-			other_where: '',
-			other_why: '',
-			other_what: '',
-			other_concerns:''
+			member1_size: null,
+			member2_size: null,
+			member3_size: null,
+			member4_size: null,
+			member1_photo: null,
+			member2_photo: null,
+			member3_photo: null,
+			member4_photo: null,
+			member1_shower: null,
+			member2_shower: null,
+			member3_shower: null,
+			member4_shower: null
 		}
 	}
 
-	handleSave(data){
-		// should save to database!
-		// redirect somewhere
+	handlePhotoUpload(e){
+		const state_name = e.target.name;
+		const state_file = e.target.files[0];
+		this.setState({ [state_name] : state_file });
+		console.log(this.state);
 	}
 
-	handleChange(){
-		// updates state whenever a change happen
+	handleChange(e) {
+		const state_name = e.target.name;
+		const state_value = e.target.value;
+		this.setState({ [state_name] : state_value });
+		console.log(this.state);
+	}
+
+	handleSave(data){
+		const group_name = this.refs.group_name.value;
+		const other_where = this.refs.other_where.value;
+		const other_why = this.refs.other_why.value;
+		const other_what = this.refs.other_what.value;
+		const other_concerns = this.refs.other_concerns.value;
+		
+		const rootRef = firebase.database().ref().child('groups');
+		const groupNameRef = rootRef.child(group_name);
+		groupNameRef.set({
+			other_where: other_where,
+			other_why: other_why,
+			other_what: other_what,
+			other_concerns: other_concerns
+		});
+
+		const membersRef = groupNameRef.child("members");
+
+		membersRef.child("one").set({
+			name: this.refs.member1_name.value,
+			school: this.refs.member1_school.value,
+			contact: this.refs.member1_contact.value,
+			email: this.refs.member1_email.value,
+			diet: this.refs.member1_diet.value,
+			size: this.state.member1_size,
+			shower: this.state.member1_shower
+		});
+
+		membersRef.child("two").set({
+			name: this.refs.member2_name.value,
+			school: this.refs.member2_school.value,
+			contact: this.refs.member2_contact.value,
+			email: this.refs.member2_email.value,
+			diet: this.refs.member2_diet.value,
+			size: this.state.member2_size,
+			shower: this.state.member2_shower
+		});
+
+		membersRef.child("three").set({
+			name: this.refs.member3_name.value,
+			school: this.refs.member3_school.value,
+			contact: this.refs.member3_contact.value,
+			email: this.refs.member3_email.value,
+			diet: this.refs.member3_diet.value,
+			size: this.state.member3_size,
+			shower: this.state.member3_shower
+		});
+
+		membersRef.child("four").set({
+			name: this.refs.member4_name.value,
+			school: this.refs.member4_school.value,
+			contact: this.refs.member4_contact.value,
+			email: this.refs.member4_email.value,
+			diet: this.refs.member4_diet.value,
+			size: this.state.member4_size,
+			shower: this.state.member4_shower
+		});
+
+		firebase.storage().ref(group_name+"/member1-"+this.refs.member1_name.value).put(this.state.member1_photo);
+		firebase.storage().ref(group_name+"/member2-"+this.refs.member2_name.value).put(this.state.member2_photo);
+		firebase.storage().ref(group_name+"/member3-"+this.refs.member3_name.value).put(this.state.member3_photo);
+		firebase.storage().ref(group_name+"/member4-"+this.refs.member4_name.value).put(this.state.member4_photo);
+
 	}
 
 	render(){
@@ -56,7 +112,8 @@ export default class Register extends React.Component {
 				<div class="group-name-container">
 					<h2>Group name: </h2>
 					<input type="text" 
-							ref="group_name" />
+							ref="group_name" 
+							onChange={this.handleChange}/>
 				</div>
 
 				<div class="members-container">
@@ -97,23 +154,57 @@ export default class Register extends React.Component {
 							<input type="radio"
 								id="member1_size_xs"
 								name="member1_size"
-								value="XS"/> XS
+								ref="member1_size" 
+								value="XS"
+								onChange={this.handleChange}/> XS
 							<input type="radio"
 								id="member1_size_s"
 								name="member1_size"
-								value="S"/> S
+								ref="member1_size" 
+								value="S"
+								onChange={this.handleChange}/> S
 							<input type="radio"
 								id="member1_size_m"
 								name="member1_size"
-								value="M"/> M
+								ref="member1_size" 
+								value="M"
+								onChange={this.handleChange}/> M
 							<input type="radio"
 								id="member1_size_l"
 								name="member1_size"
-								value="L"/> L
+								ref="member1_size" 
+								value="L"
+								onChange={this.handleChange}/> L
 							<input type="radio"
 								id="member1_size_xl"
 								name="member1_size"
-								value="XL"/> XL
+								ref="member1_size" 
+								value="XL"
+								onChange={this.handleChange}/> XL
+						</div>
+						<div class="field">
+							<label>Will you be showering during the event? </label>
+							<input type="radio"
+								id="member1_shower"
+								name="member1_shower"
+								ref="member1_shower"
+								value="Yes"
+								onChange={this.handleChange}/> Yes
+							<input type="radio"
+								id="member1_shower"
+								name="member1_shower"
+								ref="member1_shower"
+								value="No"
+								onChange={this.handleChange}/> No
+						</div>
+						<div class="field">
+							<label>2x2 Photo: </label>
+							<div class="btn-upload">
+								<label for="member1_photo">Upload image</label>
+								<input type="file" id="member1_photo" name="member1_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handlePhotoUpload} 
+								/>
+								<p ></p>
+							</div>
 						</div>
 					</div>
 					<div class="member">
@@ -151,23 +242,57 @@ export default class Register extends React.Component {
 							<input type="radio"
 								id="member2_size_xs"
 								name="member2_size"
-								value="XS"/> XS
+								ref="member2_size" 
+								value="XS"
+								onChange={this.handleChange}/> XS
 							<input type="radio"
 								id="member2_size_s"
 								name="member2_size"
-								value="S"/> S
+								ref="member2_size"
+								value="S"
+								onChange={this.handleChange}/> S
 							<input type="radio"
 								id="member2_size_m"
 								name="member2_size"
-								value="M"/> M
+								ref="member2_size"
+								value="M"
+								onChange={this.handleChange}/> M
 							<input type="radio"
 								id="member2_size_l"
 								name="member2_size"
-								value="L"/> L
+								ref="member2_size"
+								value="L"
+								onChange={this.handleChange}/> L
 							<input type="radio"
 								id="member2_size_xl"
 								name="member2_size"
-								value="XL"/> XL
+								ref="member2_size"
+								value="XL"
+								onChange={this.handleChange}/> XL
+						</div>
+						<div class="field">
+							<label>Will you be showering during the event? </label>
+							<input type="radio"
+								id="member2_shower"
+								name="member2_shower"
+								ref="member2_shower"
+								value="Yes"
+								onChange={this.handleChange}/> Yes
+							<input type="radio"
+								id="member2_shower"
+								name="member2_shower"
+								ref="member2_shower"
+								value="No"
+								onChange={this.handleChange}/> No
+						</div>
+						<div class="field">
+							<label>2x2 Photo: </label>
+							<div class="btn-upload">
+								<label for="member2_photo">Upload image</label>
+								<input type="file" id="member2_photo" name="member2_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handlePhotoUpload} 
+								/>
+								<p ></p>
+							</div>
 						</div>
 					</div>
 					<div class="member">
@@ -205,23 +330,57 @@ export default class Register extends React.Component {
 							<input type="radio"
 								id="member3_size_xs"
 								name="member3_size"
-								value="XS"/> XS
+								ref="member3_size" 
+								value="XS"
+								onChange={this.handleChange}/> XS
 							<input type="radio"
 								id="member3_size_s"
 								name="member3_size"
-								value="S"/> S
+								ref="member3_size" 
+								value="S"
+								onChange={this.handleChange}/> S
 							<input type="radio"
 								id="member3_size_m"
 								name="member3_size"
-								value="M"/> M
+								ref="member3_size" 
+								value="M"
+								onChange={this.handleChange}/> M
 							<input type="radio"
 								id="member3_size_l"
 								name="member3_size"
-								value="L"/> L
+								ref="member3_size" 
+								value="L"
+								onChange={this.handleChange}/> L
 							<input type="radio"
 								id="member3_size_xl"
 								name="member3_size"
-								value="XL"/> XL
+								ref="member3_size" 
+								value="XL"
+								onChange={this.handleChange}/> XL
+						</div>
+						<div class="field">
+							<label>Will you be showering during the event? </label>
+							<input type="radio"
+								id="member3_shower"
+								name="member3_shower"
+								ref="member3_shower"
+								value="Yes"
+								onChange={this.handleChange}/> Yes
+							<input type="radio"
+								id="member3_shower"
+								name="member3_shower"
+								ref="member3_shower"
+								value="No"
+								onChange={this.handleChange}/> No
+						</div>
+						<div class="field">
+							<label>2x2 Photo: </label>
+							<div class="btn-upload">
+								<label for="member3_photo">Upload image</label>
+								<input type="file" id="member3_photo" name="member3_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handlePhotoUpload} 
+								/>
+								<p ></p>
+							</div>
 						</div>
 					</div>
 					<div class="member">
@@ -260,23 +419,57 @@ export default class Register extends React.Component {
 							<input type="radio"
 								id="member4_size_xs"
 								name="member4_size"
-								value="XS"/> XS
+								ref="member4_size"
+								value="XS"
+								onChange={this.handleChange}/> XS
 							<input type="radio"
 								id="member4_size_s"
 								name="member4_size"
-								value="S"/> S
+								ref="member4_size"
+								value="S"
+								onChange={this.handleChange}/> S
 							<input type="radio"
 								id="member4_size_m"
 								name="member4_size"
-								value="M"/> M
+								ref="member4_size"
+								value="M"
+								onChange={this.handleChange}/> M
 							<input type="radio"
 								id="member4_size_l"
 								name="member4_size"
-								value="L"/> L
+								ref="member4_size"
+								value="L"
+								onChange={this.handleChange}/> L
 							<input type="radio"
 								id="member4_size_xl"
 								name="member4_size"
-								value="XL"/> XL
+								ref="member4_size"
+								value="XL"
+								onChange={this.handleChange}/> XL
+						</div>
+						<div class="field">
+							<label>Will you be showering during the event? </label>
+							<input type="radio"
+								id="member4_shower"
+								name="member4_shower"
+								ref="member4_shower"
+								value="Yes"
+								onChange={this.handleChange}/> Yes
+							<input type="radio"
+								id="member4_shower"
+								name="member4_shower"
+								ref="member4_shower"
+								value="No"
+								onChange={this.handleChange}/> No
+						</div>
+						<div class="field">
+							<label>2x2 Photo: </label>
+							<div class="btn-upload">
+								<label for="member4_photo">Upload image</label>
+								<input type="file" id="member4_photo" name="member4_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handlePhotoUpload} 
+								/>
+								<p ></p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -306,7 +499,7 @@ export default class Register extends React.Component {
 					</div>
 				</div>
 
-				<center><button id="btn-submit">Submit</button></center>
+				<center><button id="btn-submit" onClick={this.handleSave} >Submit</button></center>
 			</div>
 		)
 	}
