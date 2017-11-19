@@ -187,7 +187,6 @@ body, html {
 
 #register-container {
 	margin: 100px 10px 50px 10px;
-
 	color: #89FC14;
 }
 
@@ -196,19 +195,32 @@ body, html {
 	margin: 0;
 }
 
+#register-container h3 {
+	font-size: 25px;
+	text-decoration:underline;
+}
+
 #register-container h4 {
 	font-size: 14px;
 }
 
 #register-container label {
 	font-weight: 800;
+	font-size: 400;
+}
+
+.group-name-container{
+	width: 98%;
 }
 
 .group-name-container h2 {
 	margin-bottom: 5px;
+	min-width: 180px;
+	margin: 0;
 }
 .group-name-container input {
 	width:100%;
+	font-size: 20px;
 }
 
 .members-container textarea {
@@ -229,12 +241,23 @@ body, html {
 	background: transparent;
 	border:none;
 	border-bottom: 1px solid #89FC14;
+	font-family: 'Inconsolata';
+	padding: 5px;
+}
+
+#register-container textarea {
+	width: 98%;
+}
+
+#register-container input[type="radio"] {
+	margin-left: 13px;
+	margin-right: -3px;
+
 }
 
 #register-container input:focus,
 #register-container textarea:focus {
 	outline:none;
-	/*border-bottom: 1px solid #cacaca;*/
 	background-color: #89FC14;
 	color: #242424;
 }
@@ -243,10 +266,29 @@ body, html {
 	margin-bottom: 10px;
 }
 
-/*.btn-upload {
-    overflow: hidden;
-    position: relative;
-}*/
+.file-input p {
+	color: #cacaca;
+	display:inline-block;
+	margin: 0;
+	margin-left: 5px;
+	font-size: 14px;
+	overflow-x: hidden;
+}
+
+.basic {
+	margin-bottom: 10px;
+	display:flex;
+}
+
+.basic input {
+	width: 100%;	
+}
+
+.basic label {
+	min-width: 120px;
+
+}
+
 
 .btn-upload input[type="file"] {
 	width: 0.1px;
@@ -262,7 +304,6 @@ body, html {
     background-color: #89FC14;
     color: #242424;
     font-size: 14px;
-    height: 16px;
     padding: 2px 10px;
 
     cursor: pointer;
@@ -312,8 +353,6 @@ body, html {
 	background:none;
 	border:none;
 	border: 1px solid #cacaca;
-
-	/*padding:5px 10px;*/
 
 	color: #cacaca;
 }
@@ -383,6 +422,10 @@ body, html {
 		margin:auto;
 		margin-top: 50px;
 	}
+
+	.group-name-container {
+		display:flex;
+	}
 }
 
 @media screen and (min-width: 769px){
@@ -400,7 +443,7 @@ body, html {
 	}
 
 	#register-container {
-		width: 50%;
+		width: 70%;
 	}
 
 	#testimonials-container {
@@ -436,9 +479,13 @@ body, html {
 		width: 40%;
 		margin-left:0;
 	}
+
 }
 
 @media screen and (min-width: 1028px){
+	#register-container {
+		width: 50%;
+	}
 
 	.contact-desc-container {
 		width: 30%;

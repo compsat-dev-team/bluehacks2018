@@ -7,16 +7,28 @@ export default class Register extends React.Component {
 		super(props);
 		this.handleSave = this.handleSave.bind(this);
 		this.handleChange = this.handleChange.bind(this);
-		this.handlePhotoUpload = this.handlePhotoUpload.bind(this);
+		this.handleUpload = this.handleUpload.bind(this);
 		this.state = { 
 			member1_size: null,
 			member2_size: null,
 			member3_size: null,
 			member4_size: null,
+			member1_photo_filename: null,
+			member2_photo_filename: null,
+			member3_photo_filename: null,
+			member4_photo_filename: null,
 			member1_photo: null,
 			member2_photo: null,
 			member3_photo: null,
 			member4_photo: null,
+			member1_resume: null,
+			member2_resume: null,
+			member3_resume: null,
+			member4_resume: null,
+			member1_resume_filename: null,
+			member2_resume_filename: null,
+			member3_resume_filename: null,
+			member4_resume_filename: null,
 			member1_shower: null,
 			member2_shower: null,
 			member3_shower: null,
@@ -24,18 +36,20 @@ export default class Register extends React.Component {
 		}
 	}
 
-	handlePhotoUpload(e){
+	handleUpload(e){
 		const state_name = e.target.name;
 		const state_file = e.target.files[0];
-		this.setState({ [state_name] : state_file });
-		console.log(this.state);
+		const state_filename = state_name + "_filename";
+		this.setState({ 
+			[state_name] : state_file,
+			[state_filename] : state_file.name
+		});
 	}
 
 	handleChange(e) {
 		const state_name = e.target.name;
 		const state_value = e.target.value;
 		this.setState({ [state_name] : state_value });
-		console.log(this.state);
 	}
 
 	handleSave(data){
@@ -96,11 +110,15 @@ export default class Register extends React.Component {
 			shower: this.state.member4_shower
 		});
 
-		firebase.storage().ref(group_name+"/member1-"+this.refs.member1_name.value).put(this.state.member1_photo);
-		firebase.storage().ref(group_name+"/member2-"+this.refs.member2_name.value).put(this.state.member2_photo);
-		firebase.storage().ref(group_name+"/member3-"+this.refs.member3_name.value).put(this.state.member3_photo);
-		firebase.storage().ref(group_name+"/member4-"+this.refs.member4_name.value).put(this.state.member4_photo);
+		firebase.storage().ref(group_name+"/photos/member1-"+this.refs.member1_name.value).put(this.state.member1_photo);
+		firebase.storage().ref(group_name+"/photos/member2-"+this.refs.member2_name.value).put(this.state.member2_photo);
+		firebase.storage().ref(group_name+"/photos/member3-"+this.refs.member3_name.value).put(this.state.member3_photo);
+		firebase.storage().ref(group_name+"/photos/member4-"+this.refs.member4_name.value).put(this.state.member4_photo);
 
+		firebase.storage().ref(group_name+"/resumes/member1-"+this.refs.member1_name.value).put(this.state.member1_resume);
+		firebase.storage().ref(group_name+"/resumes/member2-"+this.refs.member2_name.value).put(this.state.member2_resume);
+		firebase.storage().ref(group_name+"/resumes/member3-"+this.refs.member3_name.value).put(this.state.member3_resume);
+		firebase.storage().ref(group_name+"/resumes/member4-"+this.refs.member4_name.value).put(this.state.member4_resume);
 	}
 
 	render(){
@@ -124,22 +142,22 @@ export default class Register extends React.Component {
 							<h4>(Group leader)</h4>
 						</div>
 
-						<div class="field">
+						<div class="field basic">
 							<label>Name: </label>
 							<input type="text" 
 								ref="member1_name" />
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>School: </label>
 							<input type="text" 
 								ref="member1_school"/>
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>Contact no.: </label>
 							<input type="text" 
 								ref="member1_contact"/>
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>E-mail: </label>
 							<input type="text" 
 								ref="member1_email"/>
@@ -182,29 +200,23 @@ export default class Register extends React.Component {
 								value="XL"
 								onChange={this.handleChange}/> XL
 						</div>
-						<div class="field">
-							<label>Will you be showering during the event? </label>
-							<input type="radio"
-								id="member1_shower"
-								name="member1_shower"
-								ref="member1_shower"
-								value="Yes"
-								onChange={this.handleChange}/> Yes
-							<input type="radio"
-								id="member1_shower"
-								name="member1_shower"
-								ref="member1_shower"
-								value="No"
-								onChange={this.handleChange}/> No
-						</div>
-						<div class="field">
+						<div class="field file-input">
 							<label>2x2 Photo: </label>
 							<div class="btn-upload">
 								<label for="member1_photo">Upload image</label>
-								<input type="file" id="member1_photo" name="member1_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handlePhotoUpload} 
+								<input type="file" id="member1_photo" name="member1_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handleUpload} 
 								/>
-								<p ></p>
 							</div>
+							<p>{this.state.member1_photo_filename}</p>
+						</div>
+						<div class="field file-input">
+							<label>Resume: </label>
+							<div class="btn-upload">
+								<label for="member1_resume">Upload file</label>
+								<input type="file" id="member1_resume" name="member1_resume" onChange={this.handleUpload} 
+								/>
+							</div>
+							<p>{this.state.member1_resume_filename}</p>
 						</div>
 					</div>
 					<div class="member">
@@ -212,22 +224,22 @@ export default class Register extends React.Component {
 							<h3>Member 2</h3>
 						</div>
 
-						<div class="field">
+						<div class="field basic">
 							<label>Name: </label>
 							<input type="text" 
 								ref="member2_name" />
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>School: </label>
 							<input type="text" 
 								ref="member2_school"/>
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>Contact no.: </label>
 							<input type="text" 
 								ref="member2_contact"/>
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>E-mail: </label>
 							<input type="text" 
 								ref="member2_email"/>
@@ -270,29 +282,23 @@ export default class Register extends React.Component {
 								value="XL"
 								onChange={this.handleChange}/> XL
 						</div>
-						<div class="field">
-							<label>Will you be showering during the event? </label>
-							<input type="radio"
-								id="member2_shower"
-								name="member2_shower"
-								ref="member2_shower"
-								value="Yes"
-								onChange={this.handleChange}/> Yes
-							<input type="radio"
-								id="member2_shower"
-								name="member2_shower"
-								ref="member2_shower"
-								value="No"
-								onChange={this.handleChange}/> No
-						</div>
-						<div class="field">
+						<div class="field file-input">
 							<label>2x2 Photo: </label>
 							<div class="btn-upload">
 								<label for="member2_photo">Upload image</label>
-								<input type="file" id="member2_photo" name="member2_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handlePhotoUpload} 
+								<input type="file" id="member2_photo" name="member2_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handleUpload} 
 								/>
-								<p ></p>
 							</div>
+							<p>{this.state.member2_photo_filename}</p>
+						</div>
+						<div class="field file-input">
+							<label>Resume: </label>
+							<div class="btn-upload">
+								<label for="member2_resume">Upload file</label>
+								<input type="file" id="member2_resume" name="member2_resume" onChange={this.handleUpload} 
+								/>
+							</div>
+							<p>{this.state.member2_resume_filename}</p>
 						</div>
 					</div>
 					<div class="member">
@@ -300,22 +306,22 @@ export default class Register extends React.Component {
 							<h3>Member 3</h3>
 						</div>
 
-						<div class="field">
+						<div class="field basic">
 							<label>Name: </label>
 							<input type="text" 
 								ref="member3_name" />
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>School: </label>
 							<input type="text" 
 								ref="member3_school"/>
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>Contact no.: </label>
 							<input type="text" 
 								ref="member3_contact"/>
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>E-mail: </label>
 							<input type="text" 
 								ref="member3_email"/>
@@ -358,29 +364,23 @@ export default class Register extends React.Component {
 								value="XL"
 								onChange={this.handleChange}/> XL
 						</div>
-						<div class="field">
-							<label>Will you be showering during the event? </label>
-							<input type="radio"
-								id="member3_shower"
-								name="member3_shower"
-								ref="member3_shower"
-								value="Yes"
-								onChange={this.handleChange}/> Yes
-							<input type="radio"
-								id="member3_shower"
-								name="member3_shower"
-								ref="member3_shower"
-								value="No"
-								onChange={this.handleChange}/> No
-						</div>
-						<div class="field">
+						<div class="field file-input">
 							<label>2x2 Photo: </label>
 							<div class="btn-upload">
 								<label for="member3_photo">Upload image</label>
-								<input type="file" id="member3_photo" name="member3_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handlePhotoUpload} 
+								<input type="file" id="member3_photo" name="member3_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handleUpload} 
 								/>
-								<p ></p>
 							</div>
+							<p>{this.state.member3_photo_filename}</p>
+						</div>
+						<div class="field file-input">
+							<label>Resume: </label>
+							<div class="btn-upload">
+								<label for="member3_resume">Upload file</label>
+								<input type="file" id="member3_resume" name="member3_resume" onChange={this.handleUpload} 
+								/>
+							</div>
+							<p>{this.state.member3_resume_filename}</p>
 						</div>
 					</div>
 					<div class="member">
@@ -389,22 +389,22 @@ export default class Register extends React.Component {
 							<h4>(Optional)</h4>
 						</div>
 
-						<div class="field">
+						<div class="field basic">
 							<label>Name: </label>
 							<input type="text" 
 								ref="member4_name" />
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>School: </label>
 							<input type="text" 
 								ref="member4_school"/>
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>Contact no.: </label>
 							<input type="text" 
 								ref="member4_contact"/>
 						</div>
-						<div class="field">
+						<div class="field basic">
 							<label>E-mail: </label>
 							<input type="text" 
 								ref="member4_email"/>
@@ -447,29 +447,23 @@ export default class Register extends React.Component {
 								value="XL"
 								onChange={this.handleChange}/> XL
 						</div>
-						<div class="field">
-							<label>Will you be showering during the event? </label>
-							<input type="radio"
-								id="member4_shower"
-								name="member4_shower"
-								ref="member4_shower"
-								value="Yes"
-								onChange={this.handleChange}/> Yes
-							<input type="radio"
-								id="member4_shower"
-								name="member4_shower"
-								ref="member4_shower"
-								value="No"
-								onChange={this.handleChange}/> No
-						</div>
-						<div class="field">
+						<div class="field file-input">
 							<label>2x2 Photo: </label>
 							<div class="btn-upload">
 								<label for="member4_photo">Upload image</label>
-								<input type="file" id="member4_photo" name="member4_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handlePhotoUpload} 
+								<input type="file" id="member4_photo" name="member4_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handleUpload} 
 								/>
-								<p ></p>
 							</div>
+							<p>{this.state.member4_photo_filename}</p>
+						</div>
+						<div class="field file-input">
+							<label>Resume: </label>
+							<div class="btn-upload">
+								<label for="member4_resume">Upload file</label>
+								<input type="file" id="member4_resume" name="member4_resume" onChange={this.handleUpload} 
+								/>
+							</div>
+							<p>{this.state.member4_resume_filename}</p>
 						</div>
 					</div>
 				</div>
