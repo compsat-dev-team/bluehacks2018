@@ -5,7 +5,7 @@ import * as firebase from 'firebase';
 export default class Register extends React.Component {
 	constructor(props){
 		super(props);
-		this.handleSave = this.handleSave.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleUpload = this.handleUpload.bind(this);
 		this.state = { 
@@ -52,7 +52,7 @@ export default class Register extends React.Component {
 		this.setState({ [state_name] : state_value });
 	}
 
-	handleSave(data){
+	handleSubmit(e){
 		const group_name = this.refs.group_name.value;
 		const other_where = this.refs.other_where.value;
 		const other_why = this.refs.other_why.value;
@@ -119,11 +119,14 @@ export default class Register extends React.Component {
 		firebase.storage().ref(group_name+"/resumes/member2-"+this.refs.member2_name.value).put(this.state.member2_resume);
 		firebase.storage().ref(group_name+"/resumes/member3-"+this.refs.member3_name.value).put(this.state.member3_resume);
 		firebase.storage().ref(group_name+"/resumes/member4-"+this.refs.member4_name.value).put(this.state.member4_resume);
+
+		alert("Your form as been submitted.");
+		e.preventDefault();
 	}
 
 	render(){
 		return(
-			<div id="register-container">
+			<form id="register-container">
 
 				<h1>Register for Blue Hacks 2018</h1>
 
@@ -145,27 +148,27 @@ export default class Register extends React.Component {
 						<div class="field basic">
 							<label>Name: </label>
 							<input type="text" 
-								ref="member1_name" />
+								ref="member1_name" required />
 						</div>
 						<div class="field basic">
 							<label>School: </label>
 							<input type="text" 
-								ref="member1_school"/>
+								ref="member1_school" required/>
 						</div>
 						<div class="field basic">
 							<label>Contact no.: </label>
 							<input type="text" 
-								ref="member1_contact"/>
+								ref="member1_contact" required/>
 						</div>
 						<div class="field basic">
 							<label>E-mail: </label>
 							<input type="text" 
-								ref="member1_email"/>
+								ref="member1_email" required/>
 						</div>
 						<div class="field">
 							<label>Dietary Restrictions: </label>
 							<textarea rows="4"
-								ref="member1_diet" />
+								ref="member1_diet" required />
 						</div>
 						<div class="field">
 							<label>Shirt Size: </label>
@@ -205,7 +208,7 @@ export default class Register extends React.Component {
 							<div class="btn-upload">
 								<label for="member1_photo">Upload image</label>
 								<input type="file" id="member1_photo" name="member1_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handleUpload} 
-								/>
+								required/>
 							</div>
 							<p>{this.state.member1_photo_filename}</p>
 						</div>
@@ -214,7 +217,7 @@ export default class Register extends React.Component {
 							<div class="btn-upload">
 								<label for="member1_resume">Upload file</label>
 								<input type="file" id="member1_resume" name="member1_resume" onChange={this.handleUpload} 
-								/>
+								required />
 							</div>
 							<p>{this.state.member1_resume_filename}</p>
 						</div>
@@ -227,27 +230,27 @@ export default class Register extends React.Component {
 						<div class="field basic">
 							<label>Name: </label>
 							<input type="text" 
-								ref="member2_name" />
+								ref="member2_name" required />
 						</div>
 						<div class="field basic">
 							<label>School: </label>
 							<input type="text" 
-								ref="member2_school"/>
+								ref="member2_school" required/>
 						</div>
 						<div class="field basic">
 							<label>Contact no.: </label>
 							<input type="text" 
-								ref="member2_contact"/>
+								ref="member2_contact" required/>
 						</div>
 						<div class="field basic">
 							<label>E-mail: </label>
 							<input type="text" 
-								ref="member2_email"/>
+								ref="member2_email" required/>
 						</div>
 						<div class="field">
 							<label>Dietary Restrictions: </label>
 							<textarea rows="4" 
-								ref="member2_diet" />
+								ref="member2_diet" required />
 						</div>
 						<div class="field">
 							<label>Shirt Size: </label>
@@ -287,7 +290,7 @@ export default class Register extends React.Component {
 							<div class="btn-upload">
 								<label for="member2_photo">Upload image</label>
 								<input type="file" id="member2_photo" name="member2_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handleUpload} 
-								/>
+								 required/>
 							</div>
 							<p>{this.state.member2_photo_filename}</p>
 						</div>
@@ -296,7 +299,7 @@ export default class Register extends React.Component {
 							<div class="btn-upload">
 								<label for="member2_resume">Upload file</label>
 								<input type="file" id="member2_resume" name="member2_resume" onChange={this.handleUpload} 
-								/>
+								 required/>
 							</div>
 							<p>{this.state.member2_resume_filename}</p>
 						</div>
@@ -309,27 +312,27 @@ export default class Register extends React.Component {
 						<div class="field basic">
 							<label>Name: </label>
 							<input type="text" 
-								ref="member3_name" />
+								ref="member3_name"required />
 						</div>
 						<div class="field basic">
 							<label>School: </label>
 							<input type="text" 
-								ref="member3_school"/>
+								ref="member3_school"required/>
 						</div>
 						<div class="field basic">
 							<label>Contact no.: </label>
 							<input type="text" 
-								ref="member3_contact"/>
+								ref="member3_contact"required/>
 						</div>
 						<div class="field basic">
 							<label>E-mail: </label>
 							<input type="text" 
-								ref="member3_email"/>
+								ref="member3_email"required/>
 						</div>
 						<div class="field">
 							<label>Dietary Restrictions: </label>
 							<textarea rows="4" 
-								ref="member3_diet" />
+								ref="member3_diet"required />
 						</div>
 						<div class="field">
 							<label>Shirt Size: </label>
@@ -369,7 +372,7 @@ export default class Register extends React.Component {
 							<div class="btn-upload">
 								<label for="member3_photo">Upload image</label>
 								<input type="file" id="member3_photo" name="member3_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handleUpload} 
-								/>
+								required/>
 							</div>
 							<p>{this.state.member3_photo_filename}</p>
 						</div>
@@ -378,7 +381,7 @@ export default class Register extends React.Component {
 							<div class="btn-upload">
 								<label for="member3_resume">Upload file</label>
 								<input type="file" id="member3_resume" name="member3_resume" onChange={this.handleUpload} 
-								/>
+								required/>
 							</div>
 							<p>{this.state.member3_resume_filename}</p>
 						</div>
@@ -473,28 +476,28 @@ export default class Register extends React.Component {
 					<div class="field">
 						<label>Where did you hear about BlueHacks?</label>
 						<textarea rows="4"
-							ref="other_where" />
+							ref="other_where" required />
 					</div>
 					<div class="field">
 						<label>Why they want to join BlueHacks?</label>
 						<textarea rows="4"
-							ref="other_why" />
+							ref="other_why" required />
 					</div>
 					<div class="field">
 						<label>What you expect from BlueHacks this year?</label>
 						<textarea rows="4"
-							ref="other_what" />
+							ref="other_what" required />
 					</div>
 					<div class="field">
 						<label>Do you have any other concerns?</label>
 						<h4>If none, enter 'NA'.</h4>
 						<textarea rows="4"
-							ref="other_concerns" />
+							ref="other_concerns" required />
 					</div>
 				</div>
 
-				<center><button id="btn-submit" onClick={this.handleSave} >Submit</button></center>
-			</div>
+				<center><button id="btn-submit" type="submit" >Submit</button></center>
+			</form>
 		)
 	}
 }

@@ -242,6 +242,7 @@ body, html {
 	border:none;
 	border-bottom: 1px solid #89FC14;
 	font-family: 'Inconsolata';
+	font-size: 16px;
 	padding: 5px;
 }
 
@@ -338,6 +339,7 @@ body, html {
 #contact-container {
 	margin-top: 50px;
 	height: 100vh;
+	font-weight: 800;
 }
 
 .contact-desc-container,
@@ -348,13 +350,17 @@ body, html {
 
 #contact-container input,
 #contact-container textarea{
-	width:100%;
+	width:98%;
 
 	background:none;
 	border:none;
 	border: 1px solid #cacaca;
 
 	color: #cacaca;
+	font-family: 'Inconsolata';
+	font-size: 16px;
+	font-weight:400;
+	padding: 5px;
 }
 
 #contact-container input:hover,
@@ -363,6 +369,7 @@ body, html {
 #contact-container textarea:focus {
 	background: #cacaca;
 	color:#242424;
+	outline:none;
 }
 
 #btn-send {
@@ -401,20 +408,22 @@ body, html {
 	}
 
 	#testimonials-container {
-		width: 80%;
+		width: 90%;
 	}
 
 	#testimonials-container .main {
-		display: flex;
-		flex-direction: row;
+		display:flex;
 	}
 
 	#testimonials-container .photo {
-		/*display: inline-block;*/
+		display: inline-block;
+		width: 175px;
+		height: 175px;
 	}
 
 	#testimonials-container .content {
-		width: auto;
+		display: inline-block;
+		width: 70%;
 	}
 
 	#contact-container {
@@ -447,7 +456,7 @@ body, html {
 	}
 
 	#testimonials-container {
-		width: 50%;
+		width: 70%;
 	}
 
 	.member {
@@ -468,16 +477,13 @@ body, html {
 		align-items: center;
 
 		height: 100vh;
-	}
+		width: 60%;
 
-	.contact-desc-container {
-		width: 40%;
-		margin-right:0;
+		font-size: 20px;
 	}
 
 	.contact-form-container {
-		width: 40%;
-		margin-left:0;
+		width:100%;
 	}
 
 }
@@ -487,14 +493,8 @@ body, html {
 		width: 50%;
 	}
 
-	.contact-desc-container {
-		width: 30%;
-		margin-right:0;
-	}
-
-	.contact-form-container {
-		width: 30%;
-		margin-left:0;
+	#contact-container {
+		width: 40%;
 	}
 
 }

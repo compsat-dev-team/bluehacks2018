@@ -8,6 +8,7 @@ import Map from './pages/Map'
 import Testimonials from './pages/Testimonials'
 import Register from './pages/Register'
 import Contact from './pages/Contact'
+import Sponsors from './pages/Sponsors'
 
 
 class App extends React.Component {
@@ -23,6 +24,7 @@ class App extends React.Component {
 							<li><CustomLink to="/testimonials" label="Testimonials"/></li>
 							<li><CustomLink to="/register" label="Register"/></li>
 							<li><CustomLink to="/contact" label="Contact"/></li>
+							<li><CustomLink to="/sponsors" label="Sponsors"/></li>
 						</ul>
 						<ul class="dropdown-nav">
 							<div class="btn-drop">
@@ -37,6 +39,7 @@ class App extends React.Component {
 								<li><CustomLink to="/testimonials" label="Testimonials"/></li>
 								<li><CustomLink to="/register" label="Register"/></li>
 								<li><CustomLink to="/contact" label="Contact"/></li>
+								<li><CustomLink to="/sponsors" label="Sponsors"/></li>
 							</div>
 						</ul>
 					</div>
@@ -47,6 +50,7 @@ class App extends React.Component {
 					<Route path="/testimonials" component={Testimonials}/>
 					<Route path="/register" component={Register}/>
 					<Route path="/contact" component={Contact}/>
+					<Route path="/sponsors" component={Sponsors}/>
 				</div>
 			</Router>
 		);
