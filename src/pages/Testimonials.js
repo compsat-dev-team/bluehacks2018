@@ -6,7 +6,7 @@ export default class Testimonials extends React.Component {
 			<div id="testimonials-container">
 				<h1>Testimonials</h1>
 				<div class="main">
-					<div class="photo"></div>
+					<div class="photo"><img src={require('../assets/brian.jpg')} /></div>
 					<div class="content">
 						<p>
 							Blue Hacks was a life-changing experience for me. It was so 
@@ -21,12 +21,12 @@ export default class Testimonials extends React.Component {
 							<span><b>Brian Tan</b></span> <br />
 							Member of Team Growth Hackers <br />
 							Blue Hacks 2016 2nd place winner <br />
-							<a href="https://hangtimeapp.com" target="_blank">https://hangtimeapp.com</a>
+							<a href="https://hangtimeapp.com" target="_blank">hangtimeapp.com</a>
 						</div>
 					</div>
 				</div>
 				<div class="main">
-					<div class="photo"></div>
+					<div class="photo"><img src={require('../assets/tup.png')} /></div>
 					<div class="content">
 						<p>
 							Our project for Blue Hacks was entitled “Home”. Our game is a simulation 
@@ -37,15 +37,15 @@ export default class Testimonials extends React.Component {
 
 						</p>
 						<div class="blue">
-							<span><b>Mikee Jazminez</b></span> <br />
+							<span><b>Mikee Jazmines</b></span> <br />
 							Member of Team Nippy <br />
 							Blue Hacks 2017 1nd place winner <br />
-							<a href="https://github.com/luisligunas/Blue-Hacks-2017-Nippy" target="_blank">https://github.com/luisligunas/Blue-Hacks-2017-Nippy</a>
+							<a href="https://github.com/luisligunas/Blue-Hacks-2017-Nippy" target="_blank">github.com/luisligunas/Blue-Hacks-2017-Nippy</a>
 						</div>
 					</div>
 				</div>
 				<div class="main">
-					<div class="photo"></div>
+					<div class="photo"><img src={require('../assets/mikee.png')} /></div>
 					<div class="content">
 						<p>
 							What I liked about Blue Hacks in general is, aside from the learning experience, there's always a surplus of food to keep you full during the event!
@@ -54,7 +54,7 @@ export default class Testimonials extends React.Component {
 							<span><b>Tup Luisking</b></span> <br />
 							Member of Team IDK Yet <br />
 							Blue Hacks 2017 2nd place winner <br />
-							<a href="https://gitlab.com/Anheurystics/BH2017" target="_blank">https://gitlab.com/Anheurystics/BH2017</a>
+							<a href="https://gitlab.com/Anheurystics/BH2017" target="_blank">gitlab.com/Anheurystics/BH2017</a>
 						</div>
 					</div>
 				</div>

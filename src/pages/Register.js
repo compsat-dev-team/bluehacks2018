@@ -53,6 +53,8 @@ export default class Register extends React.Component {
 	}
 
 	handleSubmit(e){
+		e.preventDefault();
+
 		const group_name = this.refs.group_name.value;
 		const other_where = this.refs.other_where.value;
 		const other_why = this.refs.other_why.value;
@@ -120,13 +122,13 @@ export default class Register extends React.Component {
 		firebase.storage().ref(group_name+"/resumes/member3-"+this.refs.member3_name.value).put(this.state.member3_resume);
 		firebase.storage().ref(group_name+"/resumes/member4-"+this.refs.member4_name.value).put(this.state.member4_resume);
 
-		alert("Your form as been submitted.");
-		e.preventDefault();
+		alert("You application has been submitted.");
+		window.location.reload(false);
 	}
 
 	render(){
 		return(
-			<form id="register-container">
+			<form id="register-container" onSubmit={this.handleSubmit}>
 
 				<h1>Register for Blue Hacks 2018</h1>
 
@@ -496,7 +498,7 @@ export default class Register extends React.Component {
 					</div>
 				</div>
 
-				<center><button id="btn-submit" type="submit" >Submit</button></center>
+				<center><input id="btn-submit" type="submit" value="Submit"/></center>
 			</form>
 		)
 	}

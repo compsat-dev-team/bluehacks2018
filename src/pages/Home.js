@@ -6,7 +6,7 @@ export default class Home extends React.Component {
 		return(
 			<div class="main-container">
 				<div  id="home-container" >
-					<h1>Blue Hacks 2018</h1>
+					<img src={require('../assets/logo-big.png')} />
 					<p>
 						<span class="pink"> January 27-28, 2018 </span>
 						<span class="orange"> 5th Floor, Rizal Library </span>
