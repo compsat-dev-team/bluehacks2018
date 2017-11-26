@@ -30,21 +30,14 @@ body, html {
 /* NAVIGATION BAR */
 
 #navbar img {
-	height: 50px;
+	height: 75px;
+	display: inline-block;
+	display:fixed;
 }
 
 #navbar ul {
 	list-style-type: none;
 	margin:0;
-
-	width: 100%;
-
-	background-color: #0d0d0d;
-	font-size: 18px;
-	text-transform: uppercase;
-
-	position: fixed;
-	top:0;
 }
 
 #navbar a {
@@ -54,12 +47,26 @@ body, html {
 
 #navbar .regular-nav {
 	display:none;
+	width:100%;
+
+	background-color: #0d0d0d;
+	font-size: 18px;
+	text-transform: uppercase;
+
+	position: fixed;
+	top:0;
+}
+
+#navbar .regular-nav ul {
+	display: inline-block;
 	float:right;
+	line-height: 75px;
+	padding-right: 20px;
 }
 
 #navbar .regular-nav li {
 	display: inline-block;
-	padding:10px;
+	padding: 0 10px;
 }
 
 #navbar .regular-nav .active,
@@ -69,9 +76,24 @@ body, html {
 }
 
 #navbar .dropdown-nav {
+	width:100%;
+
+	background-color: #0d0d0d;
+	font-size: 18px;
+	text-transform: uppercase;
+
 	padding:0;
 	text-align: right;
-	height: 50px;
+	height: 75px;
+
+	position: fixed;
+	top:0;
+}
+
+#navbar .dropdown-nav img {
+	position: fixed;
+	top:0;
+	left:0;
 }
 
 .menu-bar {
@@ -85,7 +107,7 @@ body, html {
 #navbar .btn-drop {
 	display:inline-block;
 	text-align: right;
-	margin: 15px 10px;
+	margin: 28px 10px;
 }
 
 #navbar .dropdown-content {
@@ -107,6 +129,7 @@ body, html {
 	display:block;
 	right:0;
 }
+
 
 /* MAIN PAGES */
 
@@ -162,7 +185,16 @@ body, html {
 	display:block;
 	top: 10%;
     left: 10%;
+    margin-right: 130px;
 	position:absolute;
+}
+
+.map-title h1 {
+	font-size: 30px;
+}
+
+.map-title h2 {
+	font-size: 22px;
 }
 
 .map {
@@ -177,12 +209,13 @@ body, html {
 #testimonials-container {
 	width: 90%;
 	margin:auto;
-	margin-top: 70px;
-	margin-bottom: 70px;
+	margin-top: 100px;
+	margin-bottom: 25px;
 }
 
 #testimonials-container h1 {
 	color: #5FD6F3;
+	text-align: center;
 }
 
 #testimonials-container .photo {
@@ -190,7 +223,8 @@ body, html {
 	height: 200px;
 	background-color: #cacaca;
 	border-radius: 50%;
-	margin:auto;
+	margin: auto;
+	margin-bottom:15px;
 }
 
 #testimonials-container .photo img {
@@ -204,10 +238,19 @@ body, html {
 	text-align: left;
 }
 
+#testimonials-container .main {
+	margin-bottom:30px;
+}
+
+#testimonials-container p {
+	margin:0;
+	margin-bottom: 20px;
+}
+
 /* REGISTER PAGE */
 
 #register-container {
-	margin: 100px 10px 50px 10px;
+	margin: 100px 10px 0px 10px;
 	color: #89FC14;
 }
 
@@ -358,7 +401,7 @@ body, html {
 
 /* CONTACT */
 #contact-container {
-	margin-top: 50px;
+	margin-top: 100px;
 	height: 100vh;
 	font-weight: 800;
 }
@@ -396,6 +439,7 @@ body, html {
 #btn-send {
 	background-color: #cacaca;
 	padding: 10px 25px;
+	margin-top: 10px;
 
 	border:none;
 	border-radius: 5px;
@@ -412,6 +456,24 @@ body, html {
 	border: 1px solid #cacaca;
 }
 
+#sponsors-container {
+	width: 90%;
+	margin:auto;
+	margin-top: 100px;
+	text-align: center;
+}
+
+#sponsors-container .logos {
+	width: 90%;
+	margin:auto;
+}
+
+#sponsors-container img {
+	width:100%;
+	margin-top: 15px;
+	margin-bottom: 15px;	
+}
+
 @media screen and (min-width: 426px){
 	#about-container {
 		width: 80%;
@@ -425,7 +487,15 @@ body, html {
 	#register-container {
 		width: 80%;
 		margin: auto;
-		margin-top: 50px;
+		margin-top: 100px;
+	}
+
+	.map-title h1 {
+		font-size: 2em;
+	}
+
+	.map-title h2 {
+		font-size: 1.5em;
 	}
 
 	#testimonials-container {
@@ -441,6 +511,7 @@ body, html {
 		display: inline-block;
 		width: 175px;
 		height: 175px;
+		margin:auto;
 	}
 
 	#testimonials-container .content {
@@ -451,17 +522,30 @@ body, html {
 	#contact-container {
 		width: 80%;
 		margin:auto;
-		margin-top: 50px;
+		margin-top: 100px;
 	}
 
 	.group-name-container {
 		display:flex;
 	}
+
+	#sponsors-container .logos {
+		width: 80%;
+
+		display:flex;
+		align-items: center;
+	}
+
+	#sponsors-container img {
+		width: 45%;
+		margin-right: 2%;
+		margin-left: 2%;
+	}
 }
 
 @media screen and (min-width: 769px){
 	#navbar .regular-nav {
-		display: block;
+		display: inline-block;
 
 	}
 
@@ -512,6 +596,10 @@ body, html {
 		width:100%;
 	}
 
+	#sponsors-container .logos {
+		width: 70%;
+	}
+
 }
 
 @media screen and (min-width: 1028px){
@@ -521,6 +609,10 @@ body, html {
 
 	#contact-container {
 		width: 40%;
+	}
+
+	#sponsors-container .logos {
+		width: 50%;
 	}
 
 }

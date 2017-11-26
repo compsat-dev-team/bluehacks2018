@@ -219,7 +219,7 @@ export default class Register extends React.Component {
 							<div class="btn-upload">
 								<label for="member1_resume">Upload file</label>
 								<input type="file" id="member1_resume" name="member1_resume" onChange={this.handleUpload} 
-								required />
+								 />
 							</div>
 							<p>{this.state.member1_resume_filename}</p>
 						</div>
@@ -301,7 +301,7 @@ export default class Register extends React.Component {
 							<div class="btn-upload">
 								<label for="member2_resume">Upload file</label>
 								<input type="file" id="member2_resume" name="member2_resume" onChange={this.handleUpload} 
-								 required/>
+								 />
 							</div>
 							<p>{this.state.member2_resume_filename}</p>
 						</div>
@@ -383,7 +383,7 @@ export default class Register extends React.Component {
 							<div class="btn-upload">
 								<label for="member3_resume">Upload file</label>
 								<input type="file" id="member3_resume" name="member3_resume" onChange={this.handleUpload} 
-								required/>
+								/>
 							</div>
 							<p>{this.state.member3_resume_filename}</p>
 						</div>

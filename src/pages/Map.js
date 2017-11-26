@@ -11,7 +11,7 @@ export default class Map extends React.Component {
 						<span class="purple">Ateneo de Manila University </span>
 					</h2>
 				</div>
-				<iframe src="https://snazzymaps.com/embed/28331" class="map"></iframe>
+				<iframe title="Blue Hacks Map" src="https://snazzymaps.com/embed/28331" class="map"></iframe>
 			</div>
 		);
 	}
