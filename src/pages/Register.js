@@ -481,7 +481,7 @@ export default class Register extends React.Component {
 							ref="other_where" required />
 					</div>
 					<div class="field">
-						<label>What you expect from Blue Hacks this year?</label>
+						<label>What do you expect from Blue Hacks this year?</label>
 						<textarea rows="4"
 							ref="other_what" required />
 					</div>
