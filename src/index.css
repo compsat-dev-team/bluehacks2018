@@ -239,7 +239,7 @@ body, html {
 }
 
 #testimonials-container .main {
-	margin-bottom:30px;
+	margin-bottom:50px;
 }
 
 #testimonials-container p {
@@ -291,12 +291,20 @@ body, html {
 	width: 100%;
 }
 
+.member {
+	margin-bottom: 25px;
+}
+
+.other-container .field {
+	margin-bottom: 25px;
+}
+
 .other-container textarea {
 	width:100%;
 }
 
 .member-title {
-	margin: 10px 0;
+	height: 50px;
 }
 
 #register-container input[type="text"], 
@@ -573,6 +581,7 @@ body, html {
 		display:inline-block;
 		width:45%;
 		margin-right: 2.5%;
+		vertical-align: top;
 	}
 
 	.other-container textarea {
@@ -604,7 +613,7 @@ body, html {
 
 @media screen and (min-width: 1028px){
 	#register-container {
-		width: 50%;
+		width: 60%;
 	}
 
 	#contact-container {

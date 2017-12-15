@@ -476,17 +476,12 @@ export default class Register extends React.Component {
 				<div class="other-container">
 					<h2>Other Questions</h2>
 					<div class="field">
-						<label>Where did you hear about BlueHacks?</label>
+						<label>How did you hear about Blue Hacks?</label>
 						<textarea rows="4"
 							ref="other_where" required />
 					</div>
 					<div class="field">
-						<label>Why they want to join BlueHacks?</label>
-						<textarea rows="4"
-							ref="other_why" required />
-					</div>
-					<div class="field">
-						<label>What you expect from BlueHacks this year?</label>
+						<label>What you expect from Blue Hacks this year?</label>
 						<textarea rows="4"
 							ref="other_what" required />
 					</div>
