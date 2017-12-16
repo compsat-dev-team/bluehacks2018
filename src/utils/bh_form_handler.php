@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if(verifyRecaptcha($url, $secret, $_POST['g-recaptcha-response'])){
         if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])){
-            $recieverEmail = 'nikkiii.domingo@gmail.com';
+            $recieverEmail = 'bluehacks@compsat.org';
             $subject = 'Blue Hacks Message: ' . filter_var($_POST['name'], FILTER_SANITIZE_STRING);
             $senderEmail = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
             if(!filter_var($senderEmail, FILTER_VALIDATE_EMAIL)){
