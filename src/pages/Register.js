@@ -57,7 +57,6 @@ export default class Register extends React.Component {
 
 		const group_name = this.refs.group_name.value;
 		const other_where = this.refs.other_where.value;
-		const other_why = this.refs.other_why.value;
 		const other_what = this.refs.other_what.value;
 		const other_concerns = this.refs.other_concerns.value;
 		
@@ -65,7 +64,6 @@ export default class Register extends React.Component {
 		const groupNameRef = rootRef.child(group_name);
 		groupNameRef.set({
 			other_where: other_where,
-			other_why: other_why,
 			other_what: other_what,
 			other_concerns: other_concerns
 		});

@@ -1,5 +1,4 @@
 import React from 'react'
-// import logo from '../assets/logo-big.png'
 
 export default class Home extends React.Component {
 	render(){
