@@ -57,7 +57,6 @@ export default class Register extends React.Component {
 
 		const group_name = this.refs.group_name.value;
 		const other_where = this.refs.other_where.value;
-		const other_why = this.refs.other_why.value;
 		const other_what = this.refs.other_what.value;
 		const other_concerns = this.refs.other_concerns.value;
 		
@@ -65,7 +64,6 @@ export default class Register extends React.Component {
 		const groupNameRef = rootRef.child(group_name);
 		groupNameRef.set({
 			other_where: other_where,
-			other_why: other_why,
 			other_what: other_what,
 			other_concerns: other_concerns
 		});
@@ -481,12 +479,7 @@ export default class Register extends React.Component {
 							ref="other_where" required />
 					</div>
 					<div class="field">
-						<label>Why they want to join BlueHacks?</label>
-						<textarea rows="4"
-							ref="other_why" required />
-					</div>
-					<div class="field">
-						<label>What you expect from BlueHacks this year?</label>
+						<label>What do you expect from BlueHacks this year?</label>
 						<textarea rows="4"
 							ref="other_what" required />
 					</div>

@@ -532,8 +532,8 @@ body, html {
 	#sponsors-container .logos {
 		width: 80%;
 
-		display:flex;
-		align-items: center;
+/*		display:flex;
+		align-items: center;*/
 	}
 
 	#sponsors-container img {
