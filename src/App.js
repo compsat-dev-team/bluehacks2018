@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 import './index.css'
 import Home from './pages/Home'
@@ -9,6 +9,7 @@ import Testimonials from './pages/Testimonials'
 import Register from './pages/Register'
 import Contact from './pages/Contact'
 import Sponsors from './pages/Sponsors'
+import ErrorPage from './pages/ErrorPage'
 
 
 class App extends React.Component {
@@ -26,7 +27,7 @@ class App extends React.Component {
 								<li><CustomLink to="/testimonials" label="Testimonials"/></li>
 								<li><CustomLink to="/register" label="Register"/></li>
 								<li><CustomLink to="/contact" label="Contact"/></li>
-								<li><CustomLink to="/sponsors" label="Sponsors"/></li>
+								<li><CustomLink to="/sponsors" label="Partners"/></li>
 							</ul>
 						</div>
 						<ul class="dropdown-nav">
@@ -43,18 +44,22 @@ class App extends React.Component {
 								<li><CustomLink to="/testimonials" label="Testimonials"/></li>
 								<li><CustomLink to="/register" label="Register"/></li>
 								<li><CustomLink to="/contact" label="Contact"/></li>
-								<li><CustomLink to="/sponsors" label="Sponsors"/></li>
+								<li><CustomLink to="/sponsors" label="Partners"/></li>
+
 							</div>
 						</ul>
 					</div>
 
-					<Route exact path="/" component={Home}/>
-					<Route path="/about" component={About}/>
-					<Route path="/map" component={Map}/>
-					<Route path="/testimonials" component={Testimonials}/>
-					<Route path="/register" component={Register}/>
-					<Route path="/contact" component={Contact}/>
-					<Route path="/sponsors" component={Sponsors}/>
+					<Switch>
+						<Route exact path="/" component={Home}/>
+						<Route path="/about" component={About}/>
+						<Route path="/map" component={Map}/>
+						<Route path="/testimonials" component={Testimonials}/>
+						<Route path="/register" component={Register}/>
+						<Route path="/contact" component={Contact}/>
+						<Route path="/sponsors" component={Sponsors}/>
+						<Route component={ErrorPage}/>
+					</Switch>
 				</div>
 			</Router>
 		);
