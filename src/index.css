@@ -609,6 +609,10 @@ body, html {
 		width: 70%;
 	}
 
+	#sponsors-container img {
+		width: 28%;
+	}
+
 }
 
 @media screen and (min-width: 1028px){
