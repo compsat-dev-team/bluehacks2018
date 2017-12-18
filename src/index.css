@@ -418,6 +418,10 @@ body, html {
 	margin-bottom: 0;
 }
 
+#contact-container a {
+	color: #5FD6F3;
+}
+
 .contact-desc-container,
 .contact-form-container {
 	width: 90%;

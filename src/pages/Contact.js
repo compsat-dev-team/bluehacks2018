@@ -12,13 +12,13 @@ export default class Contact extends React.Component {
 						<h2 class="purple">Gab De Jesus</h2>
 						Project Head <br/>
 						(0977) 310 2768 <br />
-						<span class="blue">gab.dejesus@compsat.org</span>
+						<span class="blue"><a href="mailto:gab.dejesus@compsat.org">gab.dejesus@compsat.org</a></span>
 					</div>
 					<div class="contact-info ">
 						<h2 class="purple">Dion Velasco</h2>
 						Project Head <br/>
 						(0917) 835 7442 <br />
-						<span class="blue">dion.velasco@obf.ateneo.edu</span>
+						<span class="blue"><a href="mailto:dion.velasco@obf.ateneo.edu">dion.velasco@obf.ateneo.edu</a></span>
 					</div>
 				</div>
 			</div>
