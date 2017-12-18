@@ -54,7 +54,7 @@ export default class Testimonials extends React.Component {
 							<span class="blue"><b>Tup Luisking</b></span> <br />
 							<span class="pink">Member of Team IDK Yet </span> <br />
 							<span class="orange">Blue Hacks 2017 2nd place winner </span> <br />
-							<a class="purple" href="https://gitlab.com/Anheurystics/BH2017" target="_blank" rel="noopener noreferrer">gitlab.com/Anheurystics/BH2017</a>
+							<a class="purple" href="https://github.com/Anheurystics/Funducation" target="_blank" rel="noopener noreferrer">github.com/Anheurystics/Funducation</a>
 						</div>
 					</div>
 				</div>
