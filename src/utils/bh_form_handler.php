@@ -9,32 +9,26 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_POST = json_decode(file_get_contents('php://input'), true);
-    if(!isset($_POST['token']) || !isset($_POST['g-recaptcha-response'])){
+    if(!isset($_POST['token'])){
         echo json_encode(array('status' => False, 'message' => 'Verification Error'));
     }
 
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
     $secret = '6LdpbjoUAAAAAEIfuZKqUEt0klGrbOXOCn2Ey6iJ';
 
-    if(verifyRecaptcha($url, $secret, $_POST['g-recaptcha-response'])){
-        if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])){
-            $recieverEmail = 'bluehacks@compsat.org';
-            $subject = 'Blue Hacks Message: ' . filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-            $senderEmail = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-            if(!filter_var($senderEmail, FILTER_VALIDATE_EMAIL)){
-                echo json_encode(array('status' => False, 'message' => 'Your E-mail is invalid. Please try again.'));
-                return;
-            }
-            mail($recieverEmail, $subject, $_POST['message'], 'From:'.$senderEmail);
-            
-            echo json_encode(array('status' => True, 'message' => 'Thank you! Your message has been sent.'));
+    if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])){
+        $recieverEmail = 'bluehacks@compsat.org';
+        $subject = 'Blue Hacks Message: ' . filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+        $senderEmail = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        if(!filter_var($senderEmail, FILTER_VALIDATE_EMAIL)){
+            echo json_encode(array('status' => False, 'message' => 'Your E-mail is invalid. Please try again.'));
+            return;
         }
-        else{
-            echo json_encode(array('status' => False, 'message' => 'Please provide all necessary details.'));
-        }
+        mail($recieverEmail, $subject, $_POST['message'], 'From:'.$senderEmail);
+        
+        echo json_encode(array('status' => True, 'message' => 'Thank you! Your message has been sent.'));
     }
     else{
-        echo json_encode(array('status' => False, 'message' => 'Sorry, a verification error occured. Please try again.'));
+        echo json_encode(array('status' => False, 'message' => 'Please provide all necessary details.'));
     }
 }
 

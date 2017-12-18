@@ -27,7 +27,7 @@ class App extends React.Component {
 								<li><CustomLink to="/testimonials" label="Testimonials"/></li>
 								<li><CustomLink to="/register" label="Register"/></li>
 								<li><CustomLink to="/contact" label="Contact"/></li>
-								<li><CustomLink to="/sponsors" label="Partners"/></li>
+								<li><CustomLink to="/partners" label="Partners"/></li>
 							</ul>
 						</div>
 						<ul class="dropdown-nav">
@@ -44,7 +44,7 @@ class App extends React.Component {
 								<li><CustomLink to="/testimonials" label="Testimonials"/></li>
 								<li><CustomLink to="/register" label="Register"/></li>
 								<li><CustomLink to="/contact" label="Contact"/></li>
-								<li><CustomLink to="/sponsors" label="Partners"/></li>
+								<li><CustomLink to="/partners" label="Partners"/></li>
 
 							</div>
 						</ul>
@@ -57,7 +57,7 @@ class App extends React.Component {
 						<Route path="/testimonials" component={Testimonials}/>
 						<Route path="/register" component={Register}/>
 						<Route path="/contact" component={Contact}/>
-						<Route path="/sponsors" component={Sponsors}/>
+						<Route path="/partners" component={Sponsors}/>
 						<Route component={ErrorPage}/>
 					</Switch>
 				</div>

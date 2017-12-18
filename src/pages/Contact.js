@@ -10,7 +10,6 @@ export default class Contact extends React.Component {
 		super(props);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleInput = this.handleInput.bind(this);
-		this.handleRecaptcha = this.handleRecaptcha.bind(this);
 		this.state = { 
 			token: null,
 			name: null,
@@ -45,14 +44,6 @@ export default class Contact extends React.Component {
 		});
 	}
 
-	handleRecaptcha(e){
-		this.setState({
-			'g-recaptcha-response': e
-		});
-
-		console.log(this.state);
-	}
-
 	render(){
 		return(
 			<form>
@@ -74,11 +65,6 @@ export default class Contact extends React.Component {
 									rows="7" 
 									ref="member2_diet" onChange={this.handleInput} required />
 						</div>
-						<ReCAPTCHA
-							ref="recaptcha"
-							sitekey="6LdpbjoUAAAAAAoDKA0CZcUpXNABV4h8VDmwPa1G"
-							onChange={this.handleRecaptcha}
-						/>
 						<button 
 							id="btn-send"
 							onClick={this.handleSubmit}>
