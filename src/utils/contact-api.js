@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const API_URL = 'http://localhost/bh_form_handler.php';
+const API_URL = 'http://bluehacks.compsat.org/src/utils/bh_form_handler.php';
 
 export {getToken, postContactForm};
 
