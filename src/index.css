@@ -414,6 +414,10 @@ body, html {
 	font-weight: 800;
 }
 
+#contact-container h2 {
+	margin-bottom: 0;
+}
+
 .contact-desc-container,
 .contact-form-container {
 	width: 90%;
@@ -611,8 +615,14 @@ body, html {
 
 		height: 100vh;
 		width: 60%;
+		margin-top: 0;
 
 		font-size: 20px;
+	}
+
+	#contact-container .contact-info {
+		display: inline-block;
+		width: 50%;
 	}
 
 	.contact-form-container {
@@ -638,7 +648,7 @@ body, html {
 	}
 
 	#contact-container {
-		width: 40%;
+		width: 50%;
 	}
 
 	#sponsors-container .logos {

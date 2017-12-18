@@ -1,78 +1,27 @@
 import React from 'react';
-import {getToken, postContactForm} from '../utils/contact-api';
-import forge from 'node-forge';
-import ReCAPTCHA from 'react-google-recaptcha';
-
 
 export default class Contact extends React.Component {
 
-	constructor(props){
-		super(props);
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleInput = this.handleInput.bind(this);
-		this.state = { 
-			token: null,
-			name: null,
-			email: null,
-			message: null,
-		}
-	}
-
-	componentDidMount() {
-		getToken().then((response) => {
-			var token = response.token_key;
-			var hmac = forge.hmac.create();
-			hmac.start('sha256', token);
-			hmac.update('/bh_form_handler.php');
-
-			var hashed_token = hmac.digest().toHex()
-			this.setState({token: hashed_token});
-		});
-	}
-
-	handleInput(e){
-		const state_name = e.target.name;
-		const state_value = e.target.value;
-		this.setState({ [state_name] : state_value });
-	}
-
-	handleSubmit(e){
-		e.preventDefault();
-		console.log(JSON.stringify(this.state));
-		postContactForm(JSON.stringify(this.state)).then((response) => {
-			alert(response.message);
-		});
-	}
-
 	render(){
 		return(
-			<form>
-				<div id="contact-container">
-					<div class="contact-form-container">
-						<h1>Contact us</h1>
-						<p>Have any questions? Leave us a message.</p>
-						<div class="field">
-							<label>Name:</label>
-							<input name="name" type="text" onChange={this.handleInput} required />
-						</div>
-						<div class="field">
-							<label>E-mail Address:</label>
-							<input name="email" type="text" onChange={this.handleInput} required />
-						</div>
-						<div class="field">
-							<label>Message:</label>
-							<textarea name="message"
-									rows="7" 
-									ref="member2_diet" onChange={this.handleInput} required />
-						</div>
-						<button 
-							id="btn-send"
-							onClick={this.handleSubmit}>
-							Send
-						</button>
+			<div id="contact-container">
+				<div class="contact-form-container">
+					<h1 class="pink">Contact us</h1>
+					<p>If you have any inquiries regarding this event, please contact us: </p>
+					<div class="contact-info ">
+						<h2 class="purple">Gab De Jesus</h2>
+						Project Head <br/>
+						(0977) 310 2768 <br />
+						<span class="blue">gab.dejesus@compsat.org</span>
+					</div>
+					<div class="contact-info ">
+						<h2 class="purple">Dion Velasco</h2>
+						Project Head <br/>
+						(0917) 835 7442 <br />
+						<span class="blue">dion.velasco@obf.ateneo.edu</span>
 					</div>
 				</div>
-			</form>
+			</div>
 		);
 	}
 }
