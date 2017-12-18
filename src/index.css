@@ -476,8 +476,16 @@ body, html {
 	margin:auto;
 }
 
-#sponsors-container img {
+#sponsors-container .logos-big img {
 	width:100%;
+	margin-top: 15px;
+	margin-bottom: 15px;	
+}
+
+#sponsors-container .logos-small img {
+	width:45%;
+	margin-right: 2%;
+	margin-left: 2%;
 	margin-top: 15px;
 	margin-bottom: 15px;	
 }
@@ -544,8 +552,14 @@ body, html {
 		align-items: center;*/
 	}
 
-	#sponsors-container img {
+	#sponsors-container .logos-big img {
 		width: 45%;
+		margin-right: 2%;
+		margin-left: 2%;
+	}
+
+	#sponsors-container .logos-small img {
+		width: 28%;
 		margin-right: 2%;
 		margin-left: 2%;
 	}
@@ -609,8 +623,11 @@ body, html {
 		width: 70%;
 	}
 
-	#sponsors-container img {
-		width: 28%;
+	#sponsors-container .logos-big img {
+		width: 40%;
+	}
+	#sponsors-container .logos-small img {
+		width: 20%;
 	}
 
 }
