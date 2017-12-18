@@ -5,7 +5,6 @@ export default class Testimonials extends React.Component {
 		return(
 			<div id="sponsors-container">
 				<h1 class="pink">Sponsors</h1>
-				<h2 class="orange">Minor Sponsors</h2>
 				<div class="logos logos-small">
 					<img alt="Smart Logo" src={require('../assets/sponsor-smart.png')} />
 				</div>
