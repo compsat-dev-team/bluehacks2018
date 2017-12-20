@@ -4,7 +4,7 @@ export default class About extends React.Component {
 	render(){
 		return(
 			<div class="main-container">
-				<div id="about-container">
+				{/*<div id="about-container">
 					<h1>
 						<span class="blue">def </span>
 						<span class="green"> bluehacks</span>:
@@ -17,7 +17,8 @@ export default class About extends React.Component {
 						to plan and develop their applications to be pitched 
 						to a panel of judges with diverse backgrounds and disciplines.
 					</p>
-				</div>
+				</div>*/}
+				<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS5WveFw9sQH0UkhPcs9AX8XOjDz-yPrlJ0M18UfagXdLHM0AKNH2D650YtYej0Sc5jsrQwZF6SBD7j/embed?start=false&loop=true&delayms=15000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 			</div>
 		);
 	}

@@ -137,8 +137,9 @@ export default class Register extends React.Component {
 							onChange={this.handleChange}/>
 				</div>
 
+				<h2>Members</h2>
+				
 				<div class="members-container">
-					<h2>Members</h2>
 					<div class="member">
 						<div class="member-title">
 							<h3>Member 1</h3>
@@ -171,37 +172,52 @@ export default class Register extends React.Component {
 								ref="member1_diet" required />
 						</div>
 						<div class="field">
-							<label>Shirt Size: </label>
-							<input type="radio"
-								id="member1_size_xs"
-								name="member1_size"
-								ref="member1_size" 
-								value="XS"
-								onChange={this.handleChange}/> XS
-							<input type="radio"
-								id="member1_size_s"
-								name="member1_size"
-								ref="member1_size" 
-								value="S"
-								onChange={this.handleChange}/> S
-							<input type="radio"
-								id="member1_size_m"
-								name="member1_size"
-								ref="member1_size" 
-								value="M"
-								onChange={this.handleChange}/> M
-							<input type="radio"
-								id="member1_size_l"
-								name="member1_size"
-								ref="member1_size" 
-								value="L"
-								onChange={this.handleChange}/> L
-							<input type="radio"
-								id="member1_size_xl"
-								name="member1_size"
-								ref="member1_size" 
-								value="XL"
-								onChange={this.handleChange}/> XL
+							<span>Shirt Size: </span>
+							<label class="radio-label">
+								<input type="radio"
+									id="member1_size_xs"
+									name="member1_size"
+									ref="member1_size" 
+									value="XS"
+									onChange={this.handleChange}/>
+								XS
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member1_size_s"
+									name="member1_size"
+									ref="member1_size" 
+									value="S"
+									onChange={this.handleChange}/>
+								S
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member1_size_m"
+									name="member1_size"
+									ref="member1_size" 
+									value="M"
+									onChange={this.handleChange}/>
+								M
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member1_size_l"
+									name="member1_size"
+									ref="member1_size" 
+									value="L"
+									onChange={this.handleChange}/>
+								L
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member1_size_xl"
+									name="member1_size"
+									ref="member1_size" 
+									value="XL"
+									onChange={this.handleChange}/>
+								XL
+							</label>
 						</div>
 						<div class="field file-input">
 							<label>2x2 Photo: </label>
@@ -253,37 +269,52 @@ export default class Register extends React.Component {
 								ref="member2_diet" required />
 						</div>
 						<div class="field">
-							<label>Shirt Size: </label>
-							<input type="radio"
-								id="member2_size_xs"
-								name="member2_size"
-								ref="member2_size" 
-								value="XS"
-								onChange={this.handleChange}/> XS
-							<input type="radio"
-								id="member2_size_s"
-								name="member2_size"
-								ref="member2_size"
-								value="S"
-								onChange={this.handleChange}/> S
-							<input type="radio"
-								id="member2_size_m"
-								name="member2_size"
-								ref="member2_size"
-								value="M"
-								onChange={this.handleChange}/> M
-							<input type="radio"
-								id="member2_size_l"
-								name="member2_size"
-								ref="member2_size"
-								value="L"
-								onChange={this.handleChange}/> L
-							<input type="radio"
-								id="member2_size_xl"
-								name="member2_size"
-								ref="member2_size"
-								value="XL"
-								onChange={this.handleChange}/> XL
+							<span>Shirt Size: </span>
+							<label class="radio-label">
+								<input type="radio"
+									id="member2_size_xs"
+									name="member2_size"
+									ref="member2_size" 
+									value="XS"
+									onChange={this.handleChange}/>
+								XS
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member2_size_s"
+									name="member2_size"
+									ref="member2_size"
+									value="S"
+									onChange={this.handleChange}/>
+								S
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member2_size_m"
+									name="member2_size"
+									ref="member2_size"
+									value="M"
+									onChange={this.handleChange}/>
+								M
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member2_size_l"
+									name="member2_size"
+									ref="member2_size"
+									value="L"
+									onChange={this.handleChange}/>
+								L
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member2_size_xl"
+									name="member2_size"
+									ref="member2_size"
+									value="XL"
+									onChange={this.handleChange}/>
+								XL
+							</label>
 						</div>
 						<div class="field file-input">
 							<label>2x2 Photo: </label>
@@ -335,37 +366,52 @@ export default class Register extends React.Component {
 								ref="member3_diet"required />
 						</div>
 						<div class="field">
-							<label>Shirt Size: </label>
-							<input type="radio"
-								id="member3_size_xs"
-								name="member3_size"
-								ref="member3_size" 
-								value="XS"
-								onChange={this.handleChange}/> XS
-							<input type="radio"
-								id="member3_size_s"
-								name="member3_size"
-								ref="member3_size" 
-								value="S"
-								onChange={this.handleChange}/> S
-							<input type="radio"
-								id="member3_size_m"
-								name="member3_size"
-								ref="member3_size" 
-								value="M"
-								onChange={this.handleChange}/> M
-							<input type="radio"
-								id="member3_size_l"
-								name="member3_size"
-								ref="member3_size" 
-								value="L"
-								onChange={this.handleChange}/> L
-							<input type="radio"
-								id="member3_size_xl"
-								name="member3_size"
-								ref="member3_size" 
-								value="XL"
-								onChange={this.handleChange}/> XL
+							<span>Shirt Size: </span>
+							<label class="radio-label">
+								<input type="radio"
+									id="member3_size_xs"
+									name="member3_size"
+									ref="member3_size" 
+									value="XS"
+									onChange={this.handleChange}/>
+								XS
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member3_size_s"
+									name="member3_size"
+									ref="member3_size" 
+									value="S"
+									onChange={this.handleChange}/>
+								S
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member3_size_m"
+									name="member3_size"
+									ref="member3_size" 
+									value="M"
+									onChange={this.handleChange}/>
+								M
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member3_size_l"
+									name="member3_size"
+									ref="member3_size" 
+									value="L"
+									onChange={this.handleChange}/>
+								L
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member3_size_xl"
+									name="member3_size"
+									ref="member3_size" 
+									value="XL"
+									onChange={this.handleChange}/>
+								XL
+							</label>
 						</div>
 						<div class="field file-input">
 							<label>2x2 Photo: </label>
@@ -418,37 +464,52 @@ export default class Register extends React.Component {
 								ref="member4_diet" />
 						</div>
 						<div class="field">
-							<label>Shirt Size: </label>
-							<input type="radio"
-								id="member4_size_xs"
-								name="member4_size"
-								ref="member4_size"
-								value="XS"
-								onChange={this.handleChange}/> XS
-							<input type="radio"
-								id="member4_size_s"
-								name="member4_size"
-								ref="member4_size"
-								value="S"
-								onChange={this.handleChange}/> S
-							<input type="radio"
-								id="member4_size_m"
-								name="member4_size"
-								ref="member4_size"
-								value="M"
-								onChange={this.handleChange}/> M
-							<input type="radio"
-								id="member4_size_l"
-								name="member4_size"
-								ref="member4_size"
-								value="L"
-								onChange={this.handleChange}/> L
-							<input type="radio"
-								id="member4_size_xl"
-								name="member4_size"
-								ref="member4_size"
-								value="XL"
-								onChange={this.handleChange}/> XL
+							<span>Shirt Size: </span>
+							<label class="radio-label">
+								<input type="radio"
+									id="member4_size_xs"
+									name="member4_size"
+									ref="member4_size"
+									value="XS"
+									onChange={this.handleChange}/>
+								XS
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member4_size_s"
+									name="member4_size"
+									ref="member4_size"
+									value="S"
+									onChange={this.handleChange}/>
+								S
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member4_size_m"
+									name="member4_size"
+									ref="member4_size"
+									value="M"
+									onChange={this.handleChange}/>
+								M
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member4_size_l"
+									name="member4_size"
+									ref="member4_size"
+									value="L"
+									onChange={this.handleChange}/>
+								L
+							</label>
+							<label class="radio-label">
+								<input type="radio"
+									id="member4_size_xl"
+									name="member4_size"
+									ref="member4_size"
+									value="XL"
+									onChange={this.handleChange}/>
+								XL
+							</label>
 						</div>
 						<div class="field file-input">
 							<label>2x2 Photo: </label>
@@ -472,7 +533,7 @@ export default class Register extends React.Component {
 				</div>
 
 				<div class="other-container">
-					<h2>Other Questions</h2>
+					<h2>Additional Questions</h2>
 					<div class="field">
 						<label>How did you hear about Blue Hacks?</label>
 						<textarea rows="4"

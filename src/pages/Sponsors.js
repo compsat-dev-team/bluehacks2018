@@ -13,7 +13,7 @@ export default class Testimonials extends React.Component {
 				<div class="logos logos-small">
 					<img alt="Azeus Logo" src={require('../assets/sponsor-azeus.JPG')} />
 				</div>
-				<h1 class="pink">In Partnership With</h1>
+				<h1 class="pink">Partners</h1>
 				<div class="logos logos-small">
 					<img alt="Mozilla Logo" src={require('../assets/sponsor-mozilla.png')} />
 					<img alt="PCOA Logo" src={require('../assets/sponsor-pcoa.png')} />

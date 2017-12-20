@@ -287,6 +287,12 @@ body, html {
 	font-size: 20px;
 }
 
+.members-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
 .members-container textarea {
 	width: 100%;
 }
@@ -316,6 +322,7 @@ body, html {
 	font-family: 'Inconsolata';
 	font-size: 16px;
 	padding: 5px;
+	background: rgba(137, 252, 20, .05);
 }
 
 #register-container textarea {
@@ -324,8 +331,6 @@ body, html {
 
 #register-container input[type="radio"] {
 	margin-left: 13px;
-	margin-right: -3px;
-
 }
 
 #register-container input:focus,
@@ -337,6 +342,10 @@ body, html {
 
 .field {
 	margin-bottom: 10px;
+}
+
+.radio-label {
+	display: inline-block;
 }
 
 .file-input p {
@@ -602,7 +611,6 @@ body, html {
 	.member {
 		display:inline-block;
 		width:45%;
-		margin-right: 2.5%;
 		vertical-align: top;
 	}
 
