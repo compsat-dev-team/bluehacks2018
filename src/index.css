@@ -352,13 +352,30 @@ body, html {
 	display: inline-block;
 }
 
+.file-input .btn-upload-container {
+	display: inline-block;
+	width: 110px;
+	height: 25px;
+}
+
 .file-input p {
 	color: #cacaca;
 	display:inline-block;
 	margin: 0;
+	vertical-align: middle;
 	margin-left: 5px;
 	font-size: 14px;
+	line-height: 22px;
+
 	overflow-x: hidden;
+}
+
+.file-input h4 {
+	display: inline-block;
+}
+
+.file-input label {
+	margin-right: 5px;
 }
 
 .basic {
