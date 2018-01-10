@@ -564,6 +564,7 @@ export default class Register extends React.Component {
 									/>
 								</div>
 							</div>
+							<p>{this.state.member4_resume_filename}</p>
 						</div>
 					</div>
 				</div>
