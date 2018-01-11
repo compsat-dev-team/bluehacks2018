@@ -6,7 +6,6 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Map from './pages/Map'
 import Testimonials from './pages/Testimonials'
-import Register from './pages/Register'
 import Contact from './pages/Contact'
 import Sponsors from './pages/Sponsors'
 import ErrorPage from './pages/ErrorPage'
@@ -25,7 +24,6 @@ class App extends React.Component {
 								<li><CustomLink to="/about" label="About"/></li>
 								<li><CustomLink to="/map" label="Map"/></li>
 								<li><CustomLink to="/testimonials" label="Testimonials"/></li>
-								<li><CustomLink to="/register" label="Register"/></li>
 								<li><CustomLink to="/contact" label="Contact"/></li>
 								<li><CustomLink to="/partners" label="Partners"/></li>
 							</ul>
@@ -42,7 +40,6 @@ class App extends React.Component {
 								<li><CustomLink to="/about" label="About"/></li>
 								<li><CustomLink to="/map" label="Map"/></li>
 								<li><CustomLink to="/testimonials" label="Testimonials"/></li>
-								<li><CustomLink to="/register" label="Register"/></li>
 								<li><CustomLink to="/contact" label="Contact"/></li>
 								<li><CustomLink to="/partners" label="Partners"/></li>
 
@@ -55,7 +52,6 @@ class App extends React.Component {
 						<Route path="/about" component={About}/>
 						<Route path="/map" component={Map}/>
 						<Route path="/testimonials" component={Testimonials}/>
-						<Route path="/register" component={Register}/>
 						<Route path="/contact" component={Contact}/>
 						<Route path="/partners" component={Sponsors}/>
 						<Route component={ErrorPage}/>
