@@ -68,6 +68,9 @@ export default class Register extends React.Component {
 			return;
 		}
 
+		const timestamp = new Date().toString();
+		console.log(timestamp);
+
 		const group_name = this.refs.group_name.value;
 		const other_where = this.refs.other_where.value;
 		const other_what = this.refs.other_what.value;
@@ -78,7 +81,8 @@ export default class Register extends React.Component {
 		groupNameRef.set({
 			other_where: other_where,
 			other_what: other_what,
-			other_concerns: other_concerns
+			other_concerns: other_concerns,
+			timestamp: timestamp
 		});
 
 		const membersRef = groupNameRef.child("members");
@@ -237,11 +241,9 @@ export default class Register extends React.Component {
 						</div>
 						<div class="field file-input">
 							<label>2x2 Photo: </label>
-							<div class="btn-upload-container">
-								<div class="btn-upload">
-									<label for="member1_photo">Upload image</label>
-									<input type="file" id="member1_photo" name="member1_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handleUpload} />
-								</div>
+							<div class="btn-upload">
+								<label for="member1_photo">Upload image</label>
+								<input type="file" id="member1_photo" name="member1_photo" accept="image/x-png,image/gif,image/jpeg" onChange={this.handleUpload} />
 							</div>
 							<p>{this.state.member1_photo_filename}</p>
 						</div>
