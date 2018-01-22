@@ -537,12 +537,12 @@ body, html {
 	margin-left: 2%;
 	margin-top: 15px;
 	margin-bottom: 15px;	
-    vertical-align: middle;
+	vertical-align: middle;
 }
 
 #sponsors-container .logos-small:first-of-type img:last-child {
-    -webkit-filter: brightness(100);
-    filter: brightness(100);
+	-webkit-filter: brightness(100);
+	filter: brightness(100);
 }
 
 @media screen and (min-width: 426px){
